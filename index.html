@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #f5f7fa;
+            color: #17191d;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* SECCIÓN PRINCIPAL */
+
+        .hero {
+            min-height: 590px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 45px 20px;
+            background: linear-gradient(
+                165deg,
+                #39afb0 0%,
+                #39afb0 73%,
+                #f5f7fa 73.1%,
+                #f5f7fa 100%
+            );
+        }
+
+        .portrait {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #a9d7d7;
+            z-index: 1;
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 35%;
+        }
+
+        /* ETIQUETAS FLOTANTES */
+
+        .pill {
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: white;
+            border-radius: 50px;
+            padding: 18px 28px;
+            box-shadow: 0 14px 30px #182d3318;
+            font-size: 20px;
+            white-space: nowrap;
+        }
+
+        .emoji {
+            font-size: 27px;
+        }
+
+        .uiux {
+            top: 11%;
+            left: 13%;
+            font-size: 25px;
+            padding: 20px 35px;
+        }
+
+        .hello {
+            top: 9%;
+            right: 15%;
+        }
+
+        .illustrations {
+            top: 46%;
+            left: 3.5%;
+        }
+
+        .photography {
+            top: 43%;
+            right: 5%;
+        }
+
+        .surf {
+            bottom: 8%;
+            left: 19%;
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            justify-content: center;
+            font-size: 48px;
+        }
+
+        .quote {
+            bottom: 14%;
+            right: 15%;
+            font-size: 15px;
+            padding: 18px 27px;
+        }
+
+        .quote small {
+            display: block;
+            color: #9aa0aa;
+            font-size: 12px;
+        }
+
+        /* PRESENTACIÓN */
+
+        .intro {
+            text-align: center;
+            padding: 65px 24px 42px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .eyebrow {
+            color: #ff7047;
+            font-size: 14px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 70px);
+            line-height: 1.12;
+            letter-spacing: -2px;
+            font-weight: 500;
+        }
+
+        h1 strong {
+            font-weight: 800;
+        }
+
+        .lead {
+            max-width: 850px;
+            margin: 35px auto 0;
+            color: #727987;
+            font-size: 21px;
+            line-height: 1.7;
+        }
+
+        /* CONTACTO */
+
+        .contact {
+            max-width: 1480px;
+            margin: 45px auto 0;
+            padding: 30px 54px 55px;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .contact-label {
+            color: #a2a9b5;
+            font-size: 16px;
+            margin-bottom: 14px;
+        }
+
+        .email {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .mail-button {
+            width: 132px;
+            height: 78px;
+            border-radius: 50px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #ffbd42, #ff783d);
+            border: 5px solid #ffe0ad;
+            color: white;
+            font-size: 34px;
+            transition: .3s;
+        }
+
+        .mail-button:hover {
+            transform: translateY(-4px);
+        }
+
+        .social {
+            text-align: right;
+            color: #a2a9b5;
+        }
+
+        .social a {
+            display: inline-block;
+            margin-left: 15px;
+            color: #353b45;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 22px 54px;
+            border-top: 1px solid #e1e5eb;
+            color: #a2a9b5;
+            font-size: 13px;
+        }
+
+        /* BOTÓN SUBIR */
+
+        .top {
+            position: fixed;
+            bottom: 20px;
+            right: 22px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: white;
+            box-shadow: 0 8px 25px #1c28331c;
+            font-size: 25px;
+        }
+
+        /* DISEÑO RESPONSIVE */
+
+        @media (max-width: 760px) {
+
+            .hero {
+                min-height: 560px;
+                padding: 90px 20px 110px;
+            }
+
+            .portrait {
+                width: 75vw;
+                height: 75vw;
+            }
+
+            .pill {
+                padding: 12px 17px;
+                gap: 8px;
+                font-size: 14px;
+            }
+
+            .emoji {
+                font-size: 20px;
+            }
+
+            .uiux {
+                top: 5%;
+                left: 5%;
+                font-size: 17px;
+            }
+
+            .hello {
+                top: 5%;
+                right: 5%;
+            }
+
+            .illustrations {
+                top: 40%;
+                left: 2%;
+            }
+
+            .photography {
+                top: 42%;
+                right: 2%;
+            }
+
+            .surf {
+                width: 84px;
+                height: 84px;
+                bottom: 6%;
+                left: 7%;
+            }
+
+            .quote {
+                bottom: 5%;
+                right: 4%;
+                font-size: 12px;
+            }
+
+            .contact {
+                grid-template-columns: 1fr 1fr;
+                padding: 25px 24px 38px;
+            }
+
+            .mail-button {
+                grid-column: 1 / -1;
+                grid-row: 1;
+                justify-self: center;
+            }
+
+            h1 {
+                letter-spacing: -1px;
+            }
+
+            footer {
+                padding: 20px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SECCIÓN PRINCIPAL -->
+
+    <section class="hero" id="inicio">
+
+        <div class="portrait">
+            <img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=85"
+                alt="Fotografía de diseñador">
+        </div>
+
+        <div class="pill uiux">
+            <span class="emoji">💻</span>
+            UI/UX
+        </div>
+
+        <div class="pill hello">
+            <span class="emoji">👋</span>
+            Hi there!
+        </div>
+
+        <div class="pill illustrations">
+            <span class="emoji">🎯</span>
+            Illustrations
+        </div>
+
+        <div class="pill photography">
+            <span class="emoji">📸</span>
+            Photography
+        </div>
+
+        <div class="pill surf">
+            🏄
+        </div>
+
+        <a href="mailto:hola@tudominio.com" class="pill quote">
+            <span class="emoji">📬</span>
+            <span>
+                <small>Work with me</small>
+                Request a Quote
+            </span>
+        </a>
+
+    </section>
+
+    <!-- PRESENTACIÓN -->
+
+    <section class="intro">
+
+        <p class="eyebrow">
+            HI THERE, I'M ALEX
+        </p>
+
+        <h1>
+            A <strong>product designer</strong> with
+            <br>
+            passion for web
+        </h1>
+
+        <p class="lead">
+            Diseño experiencias digitales atractivas,
+            intuitivas y funcionales. Combino creatividad
+            y tecnología para transformar ideas en
+            productos web memorables.
+        </p>
+
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section class="contact" id="contacto">
+
+        <div>
+            <p class="contact-label">
+                Let's get in touch
+            </p>
+
+            <a href="mailto:hola@tudominio.com" class="email">
+                hola@tudominio.com
+            </a>
+        </div>
+
+        <a href="mailto:hola@tudominio.com" class="mail-button">
+            ✉
+        </a>
+
+        <div class="social">
+
+            <p class="contact-label">
+                Follow me
+            </p>
+
+            <a href="https://www.behance.net/" target="_blank">
+                Behance
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank">
+                Instagram
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Alex — Portafolio creativo
+    </footer>
+
+    <a href="#inicio" class="top">
+        ⌃
+    </a>
+
+</body>
+
+</html>
